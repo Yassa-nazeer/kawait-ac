@@ -22,6 +22,7 @@ html{
   scroll-behavior:smooth;
   -webkit-text-size-adjust:100%;
   overflow-x:hidden;
+  overscroll-behavior-x:none;
 }
 body{
   font-family:"Tajawal","Cairo",system-ui,-apple-system,sans-serif;
@@ -34,11 +35,14 @@ body{
   text-rendering:optimizeLegibility;
   overflow-x:hidden;
   width:100%;
+  overscroll-behavior-x:none;
+  touch-action:pan-y pinch-zoom;
 }
 /* Page wrapper — extra safety for RTL overflow */
 .page-wrapper{
   width:100%;
   overflow-x:hidden;
+  touch-action:pan-y pinch-zoom;
 }
 img{max-width:100%;display:block;height:auto}
 a{color:inherit;text-decoration:none}
