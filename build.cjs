@@ -59,7 +59,6 @@ const head = (title, desc, page, keywords = '') => `<!doctype html>
 </script>
 </head>
 <body>
-<a href="#main" class="skip">انتقل للمحتوى</a>
 <div class="scroll-progress"></div>
 <header class="nav">
   <div class="container nav__inner">
