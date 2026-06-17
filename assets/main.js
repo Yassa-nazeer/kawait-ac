@@ -1,7 +1,12 @@
 // === Fix RTL horizontal scroll (white screen fix) ===
-window.scrollTo(0, window.scrollY);
-document.documentElement.scrollLeft = 0;
-document.body.scrollLeft = 0;
+// Force horizontal scroll to 0 immediately and on every scroll
+(function(){
+  function fixScroll(){ if(window.scrollX!==0) window.scrollTo(0,window.scrollY); }
+  fixScroll();
+  window.addEventListener('scroll',fixScroll,{passive:true});
+  // Also fix after load in case browser re-positions
+  window.addEventListener('load',fixScroll);
+})();
 
 // === Burger ===
 const burger = document.querySelector('.nav__burger');
