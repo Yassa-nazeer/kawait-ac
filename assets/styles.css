@@ -443,7 +443,7 @@ h3{font-size:clamp(1.05rem,1.8vw,1.4rem)}
 }
 .mobile-bar .mb-call{background:var(--ink);color:#fff}
 .mobile-bar .mb-wa{background:#25D366;color:#fff}
-@media (max-width:780px){.mobile-bar{display:flex}body{padding-bottom:78px}}
+@media (max-width:780px){.mobile-bar{display:flex}.footer{padding-bottom:102px}}
 @media (max-width:400px){
   .mobile-bar{padding:8px 8px;padding-bottom:calc(8px + env(safe-area-inset-bottom));gap:6px}
   .mobile-bar a{padding:10px 8px;border-radius:12px;font-size:.82rem}
