@@ -1,3 +1,8 @@
+// === Fix RTL horizontal scroll (white screen fix) ===
+window.scrollTo(0, window.scrollY);
+document.documentElement.scrollLeft = 0;
+document.body.scrollLeft = 0;
+
 // === Burger ===
 const burger = document.querySelector('.nav__burger');
 const links = document.querySelector('.nav__links');
