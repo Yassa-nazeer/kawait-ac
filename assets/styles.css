@@ -489,8 +489,7 @@ section:first-of-type .about > .reveal.in{
 @media (max-width:480px){.areas{grid-template-columns:repeat(2,1fr);gap:8px}.areas span{padding:12px;font-size:.85rem}}
 
 /* === New components: skip link, hero chips, testimonials === */
-.skip{position:absolute;right:100%;top:0;background:var(--gold);color:#fff;padding:10px 16px;z-index:9999;border-radius:0 0 8px 0}
-.skip:focus{right:auto;left:0}
+
 
 .hero__chips{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px}
 .hero__chips li{font-size:.85rem;background:var(--surface);border:1px solid rgba(184,136,74,.18);color:#3a3530;padding:8px 14px;border-radius:999px;font-weight:600}
