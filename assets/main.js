@@ -1,10 +1,24 @@
 // === Burger ===
 const burger = document.querySelector('.nav__burger');
 const links = document.querySelector('.nav__links');
-burger?.addEventListener('click', () => links?.classList.toggle('open'));
+function toggleMenu() {
+  const isOpen = links?.classList.toggle('open');
+  burger?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+function closeMenu() {
+  links?.classList.remove('open');
+  burger?.setAttribute('aria-expanded', 'false');
+}
+burger?.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
 document.querySelectorAll('.nav__links a').forEach(a =>
-  a.addEventListener('click', () => links?.classList.remove('open'))
+  a.addEventListener('click', closeMenu)
 );
+// Close menu when tapping outside
+document.addEventListener('click', (e) => {
+  if (links?.classList.contains('open') && !links.contains(e.target) && !burger.contains(e.target)) {
+    closeMenu();
+  }
+});
 
 // === Reveal on scroll ===
 const io = new IntersectionObserver((entries) => {
