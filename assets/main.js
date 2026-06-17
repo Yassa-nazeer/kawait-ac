@@ -21,10 +21,18 @@ document.addEventListener('click', (e) => {
 });
 
 // === Reveal on scroll ===
+// Immediately reveal elements already visible in the viewport (prevents white screen on mobile)
+document.querySelectorAll('.reveal').forEach(el => {
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    el.classList.add('in');
+  }
+});
+// Then observe remaining hidden elements for scroll reveal
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
 
 // === Scroll progress ===
 const sp = document.querySelector('.scroll-progress');
